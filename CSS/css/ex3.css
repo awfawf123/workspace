@@ -1,0 +1,65 @@
+.container {
+  width: 500px;
+}
+/* 이미지박스 */
+.container .first {
+  position: relative;
+  background: url(../images/img.jpg) center;
+  width: 500px;
+  height: 300px;
+  margin-bottom: 5px;
+}
+
+.container .first .img-txt {
+  position: absolute;
+  width: 480px;
+  height: 150px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-left: 20px;
+}
+
+.container .first .img-txt h1{
+  color: #eee;
+}
+
+.container .first .img-txt p {
+  color: orange;
+}
+/* 확인박스 */
+.second {
+  text-align: center;
+}
+
+.second p {
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: 900;
+}
+
+.second h2 {
+  color: red;
+}
+
+.second span {
+  color: blue;
+}
+
+.second .confirm {
+  background-color: black;
+  color: #eee;
+  text-align: left;
+  margin: 0;
+}
+
+.second .sec-box1 {
+  border: 1px dotted black;
+}
+
+.second .sec-box2 {
+  border: 1px dotted green;
+}
+
+.second .sec-box3 {
+  border: 1px dotted orange;
+}
