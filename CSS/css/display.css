@@ -1,0 +1,13 @@
+.art_1{
+    border: 3px solid red;
+    display: none;
+}
+div{
+    border: 3px solid orange;
+}
+span{
+    border: 3px solid black;
+}
+.art_2 > div, .art_2 > span{
+    display: inline-block;
+}

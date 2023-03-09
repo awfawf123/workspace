@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+}
+.container{
+    background-color: #000;
+    height: 700px;
+}
+.inner{
+    width: 80%;
+    padding: 10px;
+    height: 600px;
+    background-color: #fff;
+    margin: 0 auto;
+    background-image: url('../images/img2.jpg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+header{
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+header h1{
+    background-color: #000;
+    color: #fff;
+}
+header h2{
+    font-style: italic;
+}
+main h2{
+    text-align: center;
+}
+main h3{
+    color: orange;
+}
+main ul{
+    list-style: none;
+}

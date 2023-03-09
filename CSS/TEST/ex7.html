@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p_fixed{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            right: 5%;
+        }
+        .p_static{
+            position: static;
+            width: 700px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+        .p_rel_1{
+            position: relative;
+            width: 700px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+        .p_rel_2{
+            position: relative;
+            width: 700px;
+            height: 150px;
+            border: 1px solid #ccc;
+            top: -50px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p class="p_fixed"></p>
+    <p class="p_static">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita facere aspernatur, dicta aliquam nobis sequi necessitatibus, mollitia officiis a commodi blanditiis est qui unde corrupti eligendi perspiciatis molestiae impedit!</p>
+    <p class="p_rel_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita facere aspernatur, dicta aliquam nobis sequi necessitatibus, mollitia officiis a commodi blanditiis est qui unde corrupti eligendi perspiciatis molestiae impedit!</p>
+    <p class="p_rel_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita facere aspernatur, dicta aliquam nobis sequi necessitatibus, mollitia officiis a commodi blanditiis est qui unde corrupti eligendi perspiciatis molestiae impedit!</p>
+</body>
+</html>

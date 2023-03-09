@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        main, section, article{
+            padding: 20px;
+        }
+        main{
+            background-color: yellow;
+            height: 1000px;
+        }
+        section{
+            background-color: aqua;
+        }
+        article{
+            background-color: blue;
+        }
+        .div_static{
+            background-color: beige;
+        }
+        .div_relative{
+            background-color: brown;
+        }
+        .div_absolute{
+            background-color: red;
+            bottom: 30px;
+        }
+        .div_fixed{
+            background-color: gray;
+            right: 10%;
+            bottom: 10%;
+        }
+        .div_sticky{
+            /* 바로 상위태그에만 적용됨 */
+            position: sticky;
+            background-color: green;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div class="div_static">static</div>
+                <div class="div_relative">relative</div>
+                <div class="div_absolute">absolute</div>
+                <div class="div_fixed">fixed</div>
+                <div class="div_sticky">sticky</div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* h1{
+            background-color: red;
+            border: 10px dashed black;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            background-clip: border-box;
+        } */
+        .div_position{
+            background-image: url('images/img2.jpg');
+            width: 1000px;
+            height: 1200px;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            /* background-position: bottom 30px right 50px; */
+            background-size: contain;
+        }
+        .at_img{
+            background-image: url('images/img2.jpg');
+            width: 150px;
+            height: 200px;
+            display: inline-block;
+            border: 1px solid black;
+            overflow: scroll;
+            background-size: 80%;
+        }
+        .img_scroll{
+            background-attachment: scroll;
+        }
+        .img_fixed{
+            background-attachment: fixed;
+        }
+        .img_local{
+            background-attachment: local;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>백그라운드 컬러</h1> -->
+    <!-- <div class="div_position"></div> -->
+    <div style="height: 200px"></div>
+    <div class="img_scroll at_img">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam illum velit asperiores consectetur illo dignissimos quae. Ullam, amet accusamus voluptate ea, quidem soluta, voluptates officia illum reprehenderit repudiandae eum repellendus.
+    </div>
+    <div class="img_fixed at_img">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugit officiis consequatur harum atque repudiandae vel, minus distinctio quasi, praesentium voluptas, cum odio libero molestiae vero recusandae culpa corrupti labore.
+    </div>
+    <div class="img_local at_img">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, neque facere dolor id ipsa voluptatum magnam perferendis reiciendis ipsam? Natus expedita officiis dicta excepturi modi reprehenderit enim tenetur hic facere?
+    </div>
+</body>
+</html>

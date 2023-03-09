@@ -1,0 +1,42 @@
+.container{
+    width: 1200px;
+    text-align: center;
+}
+.header{
+    height: 120px;
+    line-height: 120px;
+    background-color: lightgrey;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.content{
+    height: 600px;
+    clear: both;
+    line-height: 600px;
+}
+.content > .con_left{
+    width: 250px;
+    float: left;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.content > .con_mid{
+    width: 800px;
+    float: left;
+}
+.content > .con_right{
+    box-sizing: border-box;
+    width: 150px;
+    float: left;
+    background-color: aquamarine;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.footer{
+    height: 100px;
+    line-height: 100px;
+    background-color: lightgrey;
+    border: 1px solid black;
+}

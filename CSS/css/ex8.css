@@ -1,0 +1,20 @@
+section{
+    width: 800px;
+}
+article{
+    float: left;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px dotted #ccc;
+}
+article p{
+    font-size: 13px;
+}
+footer{
+    clear: both;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
