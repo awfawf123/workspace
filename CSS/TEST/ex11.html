@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul > li{
+            float: left;
+            box-shadow: 0 4px 3px gray;
+            border-right: 1px solid gray;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            background-color: lightsalmon;
+            text-align: center;
+        }
+        ul > li:last-child{
+            border-right: none;
+        }
+        ul > li > a{
+            color: #000;
+            display: block;
+            text-decoration: none;
+        }
+        ul > li:nth-child(n):hover > a{
+            background-color: black;
+            color: #fff;
+        }
+        ul > li:nth-of-type(6):hover > a{
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+            <li><a href="#">메뉴6</a></li>
+        </ul>
+    </nav>
+    <br>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header span{
+            color: blue;
+        }
+        header > span{
+            color: red;
+        }
+
+        p + span{
+            color: red;
+        }
+        .div3 ~ span{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span>header - div - span</span>
+        </div>
+        <span>header - span</span>
+    </header>
+    <main>
+        <div class="div3">
+            <span>main - div - span</span>
+        </div>
+        <span>main - span1</span>
+        <span>main - span2</span>
+        <p>main - p</p>
+        <span>main - span3</span>
+    </main>
+</body>
+</html>

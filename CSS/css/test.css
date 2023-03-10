@@ -1,0 +1,49 @@
+fieldset{
+    width: 500px;
+    background: url('../images/img2.jpg') no-repeat;
+}
+fieldset > legend{
+    font-size: 42px;
+    font-weight: 900;
+    color: rgb(250, 37, 239);
+}
+.req::before{
+    content: '*';
+    color: red;
+}
+label{
+    font-weight: 600;
+}
+#ID, #age, textarea{
+    background-color: transparent;
+}
+input{
+    border: 2px solid black;
+}
+input:focus{
+    outline: none;
+    border: 3px solid red;
+}
+textarea:focus{
+    outline: none;
+    border: 3px solid red;
+}
+input[type="radio"]:focus + #male{
+    color: red;
+}
+input[type="radio"]:focus + #female{
+    color: blue;
+}
+.request{
+    vertical-align: top;
+}
+span{
+    color: #fff;
+}
+.s_hover{
+    display: none;
+}
+.btn_sub:hover + .s_hover{
+    display: inline-block;
+    background-color: black;
+}

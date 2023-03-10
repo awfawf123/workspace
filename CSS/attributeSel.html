@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a[target] {
+            color: green;
+        }
+
+        [class=att_class]{
+            color: red;
+        }
+
+        [class~=att]{
+            color: aqua;
+        }
+
+        [class |= att2]{
+            color: yellowgreen;
+        }
+
+        [class ^= co]{
+            color: slategrey;
+        }
+
+        [class *= co]{
+            color: crimson;
+        }
+
+        [class $= bk]{
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">naver</a>
+    <br>
+    <h2 class="att_class">att</h2>
+    <h2 class="att_class2 att">test</h2>
+    <h2 class="att2-h2">att2</h2>
+    <h2 class="cook">cook</h2>
+    <h2 class="cook_bk">cook_bk</h2>
+</body>
+</html>

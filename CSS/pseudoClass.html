@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 아직 방문하지 않은 요소에만 스타일 적용 */
+        /* a:link{
+            color: aqua;
+        } */
+        /* 방문한 요소에 스타일 적용 */
+        /* a:visited{
+            color: red;
+        } */
+        a:hover{
+            background-color: bisque;
+        }
+        a:active{
+            background-color: aqua;
+        }
+        ul{
+            list-style: none;
+            clear: both;
+        }
+        ul li{
+            float: left;
+            border: 2px solid red;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            background-color: lightsalmon;
+            text-align: center;
+        }
+        ul li a{
+            display: block;
+            color: #000;
+            text-decoration: none;
+        }
+        input:focus{
+            outline: none;
+            border: 5px solid red;
+        }
+        #target_1:target{
+            background-color: bisque;
+        }
+        /* div :nth-child(1){
+            background-color: red;
+        }
+        div h2:nth-of-type(2){
+            background-color: aqua;
+        } */
+        div :not(p){
+            background-color: pink;
+        }
+        .container_2 .pf_1::first-line{
+            background-color: coral;
+        }
+        .container_2 .pf_2 > span::before{
+            content: '중요';
+            color: red;
+        }
+        .container_2 p::selection{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>가상 요소</legend>
+        <div class="container_2">
+            <h2>h2_1</h2>
+            <p class="pf_1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium velit maxime odio! Reprehenderit dolores quo blanditiis est ea ad, voluptate, quam illo aperiam atque natus tenetur distinctio velit eveniet accusamus?</p>
+            <p class="pf_2">Lorem <span>ipsum</span>, dolor sit amet consectetur adipisicing elit. Accusantium velit maxime odio! Reprehenderit dolores quo blanditiis est ea ad, voluptate, quam illo aperiam atque natus tenetur distinctio velit eveniet accusamus?</p>
+        </div>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>구조 가상 클래스</legend>
+        <div class="container">
+            <h2>h2_1</h2>
+            <p>p_1</p>
+            <p>p_2</p>
+            <h2>h2_1</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+
+    <a href="http://naver.com">naver</a>
+    <nav>
+        <ul>
+            <li><a href="#target_1">메뉴</a></li>
+            <li><a href="#">메뉴</a></li>
+            <li><a href="#">메뉴</a></li>
+            <li><a href="#">메뉴</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br>
+    <span id="target_1">target 테스트</span>
+    <br><br><br><br>
+    <label for="input_1">이름</label>
+    <input type="text" id="input_1">
+</body>
+</html>
