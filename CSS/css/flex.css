@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: gray;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    /* 주축과 방향을 지정하는 속성 */
+    /* flex-direction: column; */
+    /* 항목의 줄을 바꿀지 여부를 지정 
+    nowrap:줄바꿈x , wrap:width값 초과시 줄바꿈 */
+    flex-wrap: wrap;
+    /* 주축을 기준으로 정렬 */
+    /* justify-content:space-between; */
+    /* 교차축 기준으로 정렬
+    align-items: center; */
+    /* 교차축 기준으로 여러줄일 때 정렬 방법지정 */
+    align-content:space-around;
+}
+.item_3{
+    /* 교차축기준 특정 항목만 정렬*/
+    align-self:center;
+}
+.flex_item{
+    border: 1px solid black;
+    width: 15vw;
+    height: 15vh;
+    background-color: aqua;
+}
