@@ -3,6 +3,7 @@ SELECT a.emp_no,CONCAT(a.last_name,' ',a.first_name) AS FULLNAME, b.title
 FROM employees a
 	INNER JOIN titles b ON a.emp_no = b.emp_no
 WHERE b.to_date >= NOW();
+
 -- 사원의 emp_no, gender, 현재 salary 출력;
 SELECT a.emp_no, a.gender, b.salary
 FROM employees a
@@ -35,10 +36,11 @@ WHERE ra.kk <= 10
 ORDER BY ra.kk asc;
 
 -- 각 부서의 부서장의 dept_name, 풀네임, 입사일을 출력;
-SELECT c.dept_name, CONCAT(a.last_name,' ',a.first_name) AS FULLNAME, b.from_date  
+SELECT c.dept_name, CONCAT(a.last_name,' ',a.first_name) AS FULLNAME, a.hire_date  
 FROM employees a
 	INNER JOIN dept_manager b ON a.emp_no = b.emp_no
-	INNER JOIN departments c ON b.dept_no = c.dept_no;
+	INNER JOIN departments c ON b.dept_no = c.dept_no
+WHERE b.to_date >= NOW();
 
 
 -- 현재 직책이 Staff인 사원의 현재 평균 월급 출력;
@@ -54,7 +56,7 @@ INNER JOIN dept_manager b ON a.emp_no = b.emp_no
 WHERE b.to_date < DATE(99990101);
 
 -- 현재 각 직급별 평균월급이 60,000이상인 직급의 title,평균월급(정수) 내림차순  출력;
-SELECT b.title,truncate(AVG(a.salary),0) AS SAL
+SELECT b.title,floor(AVG(a.salary)) AS SAL
 FROM salaries a
 INNER JOIN titles b ON a.emp_no = b.emp_no
 WHERE a.to_date >= NOW() AND b.to_date >= NOW()

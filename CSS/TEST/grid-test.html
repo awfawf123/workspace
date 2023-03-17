@@ -5,7 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Document</title>
-    <link rel="stylesheet" href="../css/grid-test.css">
+    <!-- <link rel="stylesheet" href="../css/grid-test.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Playfair Display', serif;
+}
+        
+p,a {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: goldenrod;
+}
+ul{
+    list-style: none;
+}
+.wrapper{
+    width: 100%;
+}
+.hero{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.7em;
+}
+.hero > h1{
+    width: 50%;
+    padding-left: 1em;
+    font-size: 52px;
+    color: #fff;
+}
+.hero > article{
+    width: 50%;
+}
+.hero > article > p{
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 15px;
+}
+.hero article > a{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px;
+}
+.breweries > ul{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 15px;
+    margin: 0 25px;
+}
+.breweries ul > li{
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+}
+.breweries ul > li > p{
+    padding: 20px 0;
+    color: #000;
+    background-color: transparent;
+}
+.breweries ul > li > a{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.breweries ul > li > figure{
+    position: relative;
+    margin: 10px 20px;
+}
+.breweries ul li > figure > img{
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+}
+.breweries ul > li > figure > figcaption{
+    position: absolute;
+    width: 100%;
+    line-height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    bottom: 3px;
+    padding-left: 10px;
+}
+footer{
+    position: fixed;
+    width: 100%;
+    height: 7vh;
+    bottom: 0;
+    background-color: gray; 
+}
+footer > p{
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: translate(-50% ,-50%);
+}
+    </style>
 </head>
 
 <body>
