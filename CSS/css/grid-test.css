@@ -26,8 +26,10 @@ ul{
     height: 40vh;
 
 }
-.hero h1,article{
-    text-align: center;
+.hero h1{
+    color: #fff;
+    align-items: center;
+    padding: 20px;
 
 }
 .breweries{
