@@ -44,5 +44,5 @@
     //배열의 원소 삭제 : unset()
     $arr_week = array("Sun","Mon","delete","Tue","Wed");
     unset($arr_week[2]);
-    print_r($arr_week);
+    // print_r($arr_week);
 ?>
