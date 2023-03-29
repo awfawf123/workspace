@@ -94,11 +94,23 @@ function my_max($arr){
 // echo my_max($arr);
                     
 
-$max = $arr[0];
-for ($i=1; $i < count($arr); $i++) { 
-    if($max < $arr[$i]){
-        $max = $arr[$i];
+// $max = $arr[0];
+// for ($i=1; $i < count($arr); $i++) { 
+//     if($max < $arr[$i]){
+//         $max = $arr[$i];
+//     }
+// }
+// echo $max;
+
+//로또
+$num = rand(1,45);
+$arr_ran = array();
+for($i=1; $i <= 45; $i++){
+    if($num == $i){
+        $arr_ran = $i;
     }
 }
-echo $max;
+echo $arr_ran;
+
+
 ?>
