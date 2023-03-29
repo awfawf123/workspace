@@ -35,7 +35,7 @@
             // unset($arr_asso_for["삭제"]);
         }else{
             echo $key." : ".$val."\n";
+            // var_dump($arr_asso_for);
         }
     }
-    //  var_dump($arr_asso_for);
 ?>

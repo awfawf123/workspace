@@ -35,6 +35,16 @@
         }
         return $param_a * rcc($param_a - 1);
     }
-    echo rcc(5);
+    // echo rcc(5);
 
+    //return 함수(리턴값 o)
+    function sum2($n1,$n2){
+        return $n1 + $n2;
+    }
+    //void 함수(리턴값 x)
+    function sum($n1,$n2){
+        echo $n1 + $n2;
+        return;
+    }
+    sum2(1,2);
 ?>
