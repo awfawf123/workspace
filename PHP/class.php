@@ -40,7 +40,21 @@
     // $obj_Student->$std_id = "갑돌이id";
 
     //getter, setter로 private 객체에 접근
-    $obj_Student->set_std_id("갑순이id");
-    echo $obj_Student->get_std_id();
+    // $obj_Student->set_std_id("갑순이id");
+    // echo $obj_Student->get_std_id();
+
+
+    //생성자
+    class food{
+        private $food_name;
+        public function __construct($param_food_name){
+            $this->food_name = $param_food_name;
+        }
+        public function print_food_name(){
+            echo $this->food_name;
+        }
+    } // end class
+    $obj_food = new food("탕수육");
+    $obj_food->print_food_name();
 
 ?>
