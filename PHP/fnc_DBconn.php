@@ -21,9 +21,9 @@ $db_option = array(PDO::ATTR_EMULATE_PREPARES => false //db의 Prepared Statemen
 $param_conn = new PDO($db_dns,$db_user,$db_password,$db_option);
 }//end function my_db_conn();
 
-// $obj_conn =null; //PDO Class null로초기화
-// // DB Connect
-// my_db_conn($obj_conn);
+$obj_conn =null; //PDO Class null로초기화
+// DB Connect
+my_db_conn($obj_conn);
 
 // $sql =" SELECT *
 //         FROM employees
@@ -36,22 +36,22 @@ $param_conn = new PDO($db_dns,$db_user,$db_password,$db_option);
 // $result = $stmt->fetchAll();
 // var_dump($result);
 
-function arr_pre_add($cont){
+function arr_pre_add($limit){
     $obj_conn =null; //PDO Class null로초기화
-    my_db_conn($obj_conn); //DB연결
-
+    // DB Connect
+    my_db_conn($obj_conn);
     $sql =" SELECT *
             FROM employees
             LIMIT :limit_start ";
 
-    $arr_prepare = array(":limit_start" => "$cont");
+    $arr_prepare = array(":limit_start" => "$limit");
     $stmt = $obj_conn -> prepare($sql);
     $stmt -> execute($arr_prepare);
     $result = $stmt->fetchAll();
     var_dump($result);
 }//end function arr_pre_add();
 
-arr_pre_add(5);
+// arr_pre_add(5);
 
 
-$obj_conn = null; //DB Connection 파기
+// $obj_conn = null; //DB Connection 파기

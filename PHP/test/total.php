@@ -10,27 +10,27 @@
 // }
     // echo mylen($arr_base);
     
-    //별찍기 함수
-    // function main_star($num){
-    //     for($i=1;$i <= $num; $i++){
-    //         star($i);
-    //     }
-    // }
+    // 별찍기 함수
+    function main_star($num){
+        for($i=1;$i <= $num; $i++){
+            star($i);
+        }
+    }
 
-    // function star($num){
-    //     for($j=1;$j<=$num;$j++){
-    //         echo "*";
-    //     }
-    //         echo "\n";
-    // }
+    function star($num){
+        for($j=1;$j<=$num;$j++){
+            echo "*";
+        }
+            echo "\n";
+    }
 
-    // function star_ex($num){
-    //     for($i=1;$i <= $num; $i++){
-    //         star($num);
-    //     }
-    // }
+    function star_ex($num){
+        for($i=1;$i <= $num; $i++){
+            star($num);
+        }
+    }
     
-    // echo main_star(5);
+    echo main_star(5);
 
     //배열 길이,내용 출력
     // $arr = array(5,10,7,3,1);
@@ -103,18 +103,18 @@ function my_max($arr){
 // echo $max;
 
 //로또
-$num = array(); //변수에 배열형식저장
-for($i=0;$i<6;$i++) {  // 6번 루프시켜서 로또번호 6개 생성
-    $num[$i] = rand(1,45); //랜덤으로 로또번호 1개생성해서 첫번째 배열부터 순서대로 저장
-    for($j=0;$j<$i;$j++){ 
-        if($num[$i] == $num[$j]){ //중복체크
-            $i--; //중복되면은 -1만큼 되돌려서 다시 108줄부터 시작
-        }
-    }
-}
-for ($i=0;$i<6;$i++) // for문을 통해 배열 반복 출력
-{
-    echo $num[$i]."\n";
-}
+// $num = array(); //변수에 배열형식저장
+// for($i=0;$i<6;$i++) {  // 6번 루프시켜서 로또번호 6개 생성
+//     $num[$i] = rand(1,45); //랜덤으로 로또번호 1개생성해서 첫번째 배열부터 순서대로 저장
+//     for($j=0;$j<$i;$j++){ 
+//         if($num[$i] == $num[$j]){ //중복체크
+//             $i--; //중복되면은 -1만큼 되돌려서 다시 108줄부터 시작
+//         }
+//     }
+// }
+// for ($i=0;$i<6;$i++) // for문을 통해 배열 반복 출력
+// {
+//     echo $num[$i]."\n";
+// }
 
 ?>
