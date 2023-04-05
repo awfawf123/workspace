@@ -28,33 +28,32 @@
 	</style>
 </head>
 <body>
-	<?php echo "$year 년 $month 월 $start_week" ?>
+	<?php echo "$year 년 $month 월" ?>
 	<!-- 현재가 1월이라 이전 달이 작년 12월인경우 -->
 	<?php if ($month == 1): ?>
-		<!-- 작년 12월 -->
+	<!-- 작년 12월 -->
 		<a href="/?year=<?php echo $year-1 ?> &month=12">이전 달</a>
 	<?php else: ?>
-		<!-- 이번 년 이전 월 -->
+	<!-- 이번 년 이전 월 -->
 		<a href="/?year=<?php echo $year ?> &month=<?php echo $month-1 ?>">이전 달</a>
 	<?php endif ?>
 	<!-- 현재가 12월이라 다음 달이 내년 1월인경우 -->
 	<?php if ($month == 12): ?>
-		<!-- 내년 1월 -->
+	<!-- 내년 1월 -->
 		<a href="/?year=<?php echo $year+1 ?>&month=1">다음 달</a>
 	<?php else: ?>
-		<!-- 이번 년 다음 월 -->
+	<!-- 이번 년 다음 월 -->
 		<a href="/?year=<?php echo $year ?>&month=<?php echo $month+1 ?>">다음 달</a>
 	<?php endif ?>
-	<?php // 요일 이름 배열
-	$weekdays = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
-		?>
+	<!-- 요일 이름 배열 -->
+	<?php $weekdays = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'); ?>
+
 	<table border="1">
 		<tr> 
+			<!-- 현재달의 총 주차까지 요일 출력-->
 				<?php for ($i=0;$i<$total_week;$i++): ?> 
-				<!-- 현재 달의 총 날짜 표시(한 달) -->
 						<?php for ($week=0;$week<7;$week++): ?> 
 							<th> 
-								<!-- 시작 요일부터 마지막 날짜까지만 날짜를 보여주도록 -->
 								<?php echo $weekdays[$week]?>
 							</th> 
 						<?php endfor; ?> 
