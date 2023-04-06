@@ -40,30 +40,92 @@ for($j=0;$j<4;$j++){
     }
     // echo "\n";
 }
-$player=array();//플레이어 저장공간
+$arr = array_merge(...$card_num); // 다차원 배열 1차원으로 병합
+shuffle($arr); //카드 섞음
+$player = array();//플레이어 저장공간
 $dealer = array();//딜러 저장공간
-$player = array_rand($card_num,2); //플레이어 카드 랜덤으로 2장 저장
-$dealer = array_rand($card_num,2); //딜러 카드 랜덤으로 2장 저장
-$player_sum = 0;
 
-foreach ($player as $key => $val) {
-    foreach ($card_num as $k => $value) {
-        if($val = $value){
-            array_splice($card_num,1,1);
-        }
-    }
-    $player_sum += $val;
-    echo $key.":".$val."\n";
-}
-print_r($card_num);
-echo $player_sum."\n";
+// print_r($arr);
 
-$dealer_sum =0;
-foreach ($dealer as $key => $val) {
-    $dealer_sum += $val;
-    echo $key.":".$val."\n";
+$player = array_rand($arr,2);//player 카드 2장 나눠줌
+// print_r($player);
+for($i=0;$i<=count($arr);$i++){ //나눠준 카드 2장 키값 기준으로 카드에서 삭제
+        if($player[0] === $i){
+                // array_splice($arr,$i,1);
+                $player_str1 = $arr[$i]; //나눠준 카드 1장 value값 str1에 저장
+                unset($arr[$i]);
+            }elseif ($player[1] === $i ) {
+            $player_str2 = $arr[$i]; //나눠준 카드 1장 value값 str2에 저장
+            array_splice($arr,$i,1);
+        }    
 }
-echo $dealer_sum;
+// echo "player 2장 :".$player_str1.",".$player_str2."\n";
+$dealer = array_rand($arr,2);//dealer 카드 2장 나눠줌
+for($j=0;$j<=count($arr);$j++){ //나눠준 카드 2장 키값 기준으로 카드에서 삭제
+    if($dealer[0] === $j){
+            // array_splice($arr,$j,1);
+            $dealer_str1 = $arr[$j]; //나눠준 카드 1장 value값 str1에 저장
+            unset($arr[$j]);
+    }elseif ($dealer[1] === $j ) {
+        $dealer_str2 = $arr[$j]; //나눠준 카드 1장 value값 str2에 저장
+        array_splice($arr,$j,1);
+    }    
+}
+
+// echo "dealer 2장 :".$dealer_str1.",".$dealer_str2."\n";
+
+
+
+if($player_str1 === 'K' || $player_str1 === 'Q' ||$player_str1 ==='J'){
+    $player_str1 = 10;
+} if($player_str2 === 'K' || $player_str2 === 'Q' ||$player_str2 ==='J'){
+    $player_str2 = 10;
+} if($dealer_str1 === 'K' || $dealer_str1 === 'Q' ||$dealer_str1 ==='J'){
+    $dealer_str1 = 10;
+} if($dealer_str2 === 'K' || $dealer_str2 === 'Q' ||$dealer_str2 ==='J'){
+    $dealer_str2 = 10;
+} if($player_str1 === 'a' || $player_str1 === 'a' ||$player_str1 ==='a'){
+    $player_str1 = 1;
+} if($player_str2 === 'a' || $player_str2 === 'a' ||$player_str2 ==='a'){
+    $player_str2 = 1;
+} if($dealer_str1 === 'a' || $dealer_str1 === 'a' ||$dealer_str1 ==='a'){
+    $dealer_str1 = 1;
+} if($dealer_str2 === 'a' || $dealer_str2 === 'a' ||$dealer_str2 ==='a'){
+    $dealer_str2 = 1;
+}
+
+echo "player 2장 :".$player_str1.",".$player_str2."\n";
+echo "dealer 2장 :".$dealer_str1.",".$dealer_str2."\n";
+
+$player_sum = $player_str1 + $player_str2;
+$dealer_sum = $dealer_str1 + $dealer_str2;
+
+if($player_sum < 12 && $player_str1 === 1){
+    $player_sum +=10;
+}elseif($player_sum < 12 && $player_str2 === 1){
+    $player_sum +=10;
+}elseif($dealer_sum < 12 && $dealer_str1 === 1){
+    $dealer_sum +=10;
+}elseif($dealer_sum < 12 && $dealer_str2 === 1){
+    $dealer_sum += 10;
+}
+
+
+if($player_sum <= 21 && $player_sum > $dealer_sum){
+    echo "player score : ".$player_sum."\n"."dealer score : ".$dealer_sum."\n"."플레이어 승리";
+}elseif($dealer_sum <= 21 && $player_sum < $dealer_sum){
+    echo "player score : ".$player_sum."\n"."dealer score : ".$dealer_sum."\n"."딜러 승리";
+}elseif($player_sum == $dealer_sum){
+    echo "player score : ".$player_sum."\n"."dealer score : ".$dealer_sum."\n"."무승부";
+}
+// print_r($arr);
+
+
+
+
+
+
+
 
 
 
