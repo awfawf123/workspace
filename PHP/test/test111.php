@@ -36,11 +36,12 @@ for($j=0;$j<4;$j++){
         }else{
             $card_num[$j][$i] = $i;
         }
-        // echo $card_num[$i];
+        // echo $card_num[$j][$i];
     }
     // echo "\n";
 }
 $arr = array_merge(...$card_num); // 다차원 배열 1차원으로 병합
+//K,Q,J=10으로 지정  a=1값으로 지정
 for($i=0;$i<count($arr);$i++){
     if($arr[$i] === 'K' || $arr[$i] === 'J' || $arr[$i] === 'Q'){
         $arr[$i] = 10;
@@ -48,80 +49,24 @@ for($i=0;$i<count($arr);$i++){
         $arr[$i] = 1;
     }
 }
-var_dump($arr);
+// var_dump($arr);
+
 
 shuffle($arr); //카드 섞음
 $player = array();//플레이어 저장공간
 $dealer = array();//딜러 저장공간
 
 
-// if (strpos($arr,'K,J,Q')) { 
-    
-//     } else {
-//     //그외
-//     }
-// print_r($arr);
-unset($arr[$player[0]]);
-unset($arr[$player[1]]);
-
 $player = array_rand($arr,2);//player 카드 2장 나눠줌
-// print_r($player);
-for($i=0;$i<=count($arr);$i++)
-{ //나눠준 카드 2장 키값 기준으로 카드에서 삭제
-    if($player[0] === $i)
-    {
-        // array_splice($arr,$i,1);
-        $player_str1 = $arr[$i]; //나눠준 카드 1장 value값 str1에 저장
-        unset($arr[$i]);
-    }
-    elseif ($player[1] === $i ) 
-    {
-        $player_str2 = $arr[$i]; //나눠준 카드 1장 value값 str2에 저장
-        array_splice($arr,$i,1);
-    }    
-}
-
-// echo "player 2장 :".$player_str1.",".$player_str2."\n";
+$player_str1 = $arr[$player[0]];
+$player_str2 = $arr[$player[1]];
+unset($arr[$player[0]]);//뽑은 player 카드 52장카드에서 2장 삭제
+unset($arr[$player[1]]);
 $dealer = array_rand($arr,2);//dealer 카드 2장 나눠줌
-for($j=0;$j<=count($arr);$j++){ //나눠준 카드 2장 키값 기준으로 카드에서 삭제
-    if($dealer[0] === $j){
-            // array_splice($arr,$j,1);
-            $dealer_str1 = $arr[$j]; //나눠준 카드 1장 value값 str1에 저장
-            unset($arr[$j]);
-    }elseif ($dealer[1] === $j ) {
-        $dealer_str2 = $arr[$j]; //나눠준 카드 1장 value값 str2에 저장
-        array_splice($arr,$j,1);
-    }    
-}
-
-// echo "dealer 2장 :".$dealer_str1.",".$dealer_str2."\n";
-
-
-
-// if($player_str1 === 'K' || $player_str1 === 'Q' ||$player_str1 ==='J')
-// {
-//     $player_str1 = 10;
-// }
-// if($player_str2 === 'K' || $player_str2 === 'Q' ||$player_str2 ==='J')
-// {
-//     $player_str2 = 10;
-// }
-// if($dealer_str1 === 'K' || $dealer_str1 === 'Q' ||$dealer_str1 ==='J')
-// {
-//     $dealer_str1 = 10;
-// }
-// if($dealer_str2 === 'K' || $dealer_str2 === 'Q' ||$dealer_str2 ==='J')
-// {
-//     $dealer_str2 = 10;
-// } if($player_str1 === 'a' ){
-//     $player_str1 = 1;
-// } if($player_str2 === 'a' ){
-//     $player_str2 = 1;
-// } if($dealer_str1 === 'a' ){
-//     $dealer_str1 = 1;
-// } if($dealer_str2 === 'a'){
-//     $dealer_str2 = 1;
-// }
+$dealer_str1 = $arr[$dealer[0]];
+$dealer_str2 = $arr[$dealer[1]];
+unset($arr[$dealer[0]]);//뽑은 dealer 카드 50장카드에서 2장 삭제
+unset($arr[$dealer[1]]);
 
 echo "player 2장 :".$player_str1.",".$player_str2."\n";
 echo "dealer 2장 :".$dealer_str1.",".$dealer_str2."\n";
@@ -150,22 +95,11 @@ if($player_sum <= 21 && $player_sum > $dealer_sum){
 // print_r($arr);
 
 
-
-
-
-
-
-
-
-
-
-
-
 // while(true) {
 // 	echo '시작';
 // 	print "\n";
 // 	fscanf(STDIN, "%d\n", $input);     
-// 	if($input === 0) {//0입력시 종료
+// 	if($input === 0) { //0입력시 종료
 // 		break;
 // 	}
 //     //카드 더받기
