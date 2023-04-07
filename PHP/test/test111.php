@@ -60,6 +60,15 @@ $dealer = array();//딜러 저장공간
 $player = array_rand($arr,2);//player 카드 2장 나눠줌
 $player_str1 = $arr[$player[0]];
 $player_str2 = $arr[$player[1]];
+shuffle($arr); //카드 섞음
+
+$player[] = array_rand($arr,1);//player 카드 2장 나눠줌
+if(is_null($player[2]) == false){
+    var_dump($player[2]);
+}else{
+    echo "aaa";
+}
+
 unset($arr[$player[0]]);//뽑은 player 카드 52장카드에서 2장 삭제
 unset($arr[$player[1]]);
 $dealer = array_rand($arr,2);//dealer 카드 2장 나눠줌
