@@ -1,4 +1,4 @@
-<?php 
+<?php  
 // while + if 조합
 // $i=0;
 // while($i <=4){
