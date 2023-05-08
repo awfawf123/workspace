@@ -1,0 +1,13 @@
+.div1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.active{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: beige;
+}
