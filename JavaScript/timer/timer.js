@@ -9,30 +9,51 @@ clearInterval(myInterval);
 
 
 //1~5를 1초마다 출력
-let i=1;
-let test = setInterval(()=>{
-    console.log(i);
-    if(i++ === 5){
-        clearInterval(test);
-    }
-}
-,1000);
+// let i=1;
+// let test = setInterval(()=>{
+//     console.log(i);
+//     if(i++ === 5){
+//         clearInterval(test);
+//     }
+// }
+// ,1000);
 
 const today = document.querySelector('.today');
 const btnStop = document.querySelector('#btn-stop');
+const btnStart = document.querySelector('#btn-start');
 
-const getClock = () => {
+Date.prototype.amPm = function() {
+    let h = this.getHours() < 12 ? "am" : "pm";
+    return h;
+}
+function getClock(){
   const date = new Date();
-  const hours = String(date.getHours()).padStart(2, '0');
+  let amPm = date.amPm();
+  const hours = date.getHours();
   const minutes = String(date.getMinutes()).padStart(2, '0');
   const seconds = String(date.getSeconds()).padStart(2, '0');
 
-  today.innerText = '현재시각 '+'오후 '+`${hours} : ${minutes} : ${seconds}`;
+  if(amPm === 'am'){
+    amPm = '오전';
+  }else{
+    amPm = '오후';
+  }
+
+  today.innerText = '현재시각 ' + amPm + ' ' + hours + ':' + minutes + ':' + seconds;
 };
-
 getClock();
-let test1 = setInterval(getClock, 1000);
+let nowTime = setInterval(getClock, 1000);
 
+let flg = true;
 btnStop.addEventListener('click',()=>{
-    clearInterval(test1);
+    if(flg){
+        clearInterval(nowTime);
+        btnStop.innerText = '재시작';
+        flg = false;
+    }else{
+        nowTime = setInterval(getClock, 1000);
+        btnStop.innerText = '정지';
+        flg = true;
+    }
 })
+
