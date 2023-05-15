@@ -10,6 +10,7 @@ class Controller{
     protected $model;
     private static $modelList =[];
     private static $arrNeedAuth = ["product/list"];
+    // protected $errMsg;
     //생성자
     public function __construct($identityName, $action){
         // session start

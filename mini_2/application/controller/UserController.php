@@ -27,5 +27,22 @@ class UserController extends Controller{
         // 로그인 페이지 리턴
         return "login"._EXTENSION_PHP;
     }
+
+    public function upGet(){
+        return "sign"._EXTENSION_PHP;
+    }
+    public function upPost(){
+        $arr_info = $_POST;
+        $result = $this->model->insertUser($_POST);
+        if($arr_info["pw"] !== $arr_info["pw"]){
+            $errPwMsg = "비밀번호가 일치하지 않습니다.";
+            $this->addDynamicProPerty("errPwMsg",$errPwMsg);
+            return "sign"._EXTENSION_PHP;
+            exit();
+        }
+       
+        // 리스트 페이지 리턴
+        return "login"._EXTENSION_PHP;
+    }
    
 }
