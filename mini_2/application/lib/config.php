@@ -23,3 +23,4 @@ define("_BASE_REDIRECT","Location: ");
 define("_STR_LOGIN_ID","u_id");
 
 define("_HEADER_PHP","application/view/header.php");
+define("_FOOTER_PHP","application/view/footer.php");

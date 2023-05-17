@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css cdn-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap icon cdn-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- swiper cdn-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- css-->
     <link rel="stylesheet" href="/application/view/css/list.css" type='text/css'>
     <title>Document</title>
 </head>
@@ -46,7 +49,7 @@
         <div class="row row-cols-xxl-3 row-cols-lg-3">
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/daily?coffee/300x300" style="width: 416px; height:300px" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/daily?coffee/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -68,7 +71,7 @@
           </div>
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/collection/190727/300x300" style="width: 416px; height:300px" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/collection/190727/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading2">
@@ -90,7 +93,7 @@
           </div>
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/WLUHO9A_xik/300x300" style="width: 416px; height:300px" class="card-img-top" alt="...">
+                <img src="https://source.unsplash.com/WLUHO9A_xik/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading3">
@@ -115,29 +118,137 @@
 <!-- itmes -->
       <div class="items container">
         <div class="inner">
-        <div class="inner-left">
-          <h2>Weekly Menu</h2>
-            <ul class="tab-wrapper">
-              <li class="tab" rel="tab01"><a href="javascript:0">신제품</a></li>
-              <li class="tab" rel="tab02"><a href="javascript:0">추천제품</a></li>
-              <li class="tab" rel="tab03"><a href="javascript:0">best seller</a></li>
-          </ul>
-        </div>
+          <div class="inner-left">
+            <h2>Weekly Menu</h2>
+              <ul class="tab-wrapper">
+                <li class="tab on" rel="tab01"><a href="javascript:0">신제품</a></li>
+                <li class="tab" rel="tab02"><a href="javascript:0">추천제품</a></li>
+                <li class="tab" rel="tab03"><a href="javascript:0">best seller</a></li>
+            </ul>
+          </div>
         <div class="inner-right">
           <div class="tab-contents tab01">
             <div class="swiper-container">
-            <div class="swiper-wrapper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="pdp-card">
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">치즈 케이크</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="pdp-card">
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">크로와상</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="pdp-card">
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">초콜렛</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="pdp-card"> 
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">마카롱(초코,딸기,치즈,유자)</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-contents tab02">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="pdp-card">
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/daily?coffee" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">치즈 케이크</a>
+                      </div>
+                  </div>
+              </div>
               <div class="swiper-slide">
                 <div class="pdp-card">
+                    <div class="pdp-img">
+                        <a href="#">
+                            <img src="https://source.unsplash.com/collection/190727" alt="">
+                        </a>
+                    </div>
+                    <div class="pdp-detail">
+                        <a href="#">크로와상</a>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="pdp-card">
+                    <div class="pdp-img">
+                        <a href="#">
+                            <img src="https://source.unsplash.com/collection/190727" alt="">
+                        </a>
+                    </div>
+                    <div class="pdp-detail">
+                        <a href="#">초콜렛</a>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="pdp-card"> 
                     <div class="pdp-img">
                         <a href="#">
                             <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
                         </a>
                     </div>
                     <div class="pdp-detail">
-                        <a href="#">치즈 케이크</a>
+                        <a href="#">마카롱(초코,딸기,치즈,유자)</a>
                     </div>
-                </div>
+                </div> <!-- card-->
+              </div><!-- slide-->
+            </div><!-- wrapper-->
+          </div><!-- container-->
+          </div><!-- tab2-->
+          <div class="tab-contents tab03">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="pdp-card">
+                      <div class="pdp-img">
+                          <a href="#">
+                              <img src="https://source.unsplash.com/daily?coffee" alt="">
+                          </a>
+                      </div>
+                      <div class="pdp-detail">
+                          <a href="#">치즈 케이크</a>
+                      </div>
+                  </div>
               </div>
               <div class="swiper-slide">
                 <div class="pdp-card">
@@ -173,69 +284,18 @@
                     <div class="pdp-detail">
                         <a href="#">마카롱(초코,딸기,치즈,유자)</a>
                     </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        </div>
-        <div class="tab-contents tab02">
-          <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="pdp-card">
-                  <div class="pdp-img">
-                      <a href="#">
-                          <img src="https://source.unsplash.com/daily?coffee/300x300" alt="">
-                      </a>
-                  </div>
-                  <div class="pdp-detail">
-                      <a href="#">치즈 케이크</a>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="pdp-card">
-                  <div class="pdp-img">
-                      <a href="#">
-                          <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                      </a>
-                  </div>
-                  <div class="pdp-detail">
-                      <a href="#">크로와상</a>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="pdp-card">
-                  <div class="pdp-img">
-                      <a href="#">
-                          <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                      </a>
-                  </div>
-                  <div class="pdp-detail">
-                      <a href="#">초콜렛</a>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="pdp-card"> 
-                  <div class="pdp-img">
-                      <a href="#">
-                          <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                      </a>
-                  </div>
-                  <div class="pdp-detail">
-                      <a href="#">마카롱(초코,딸기,치즈,유자)</a>
-                  </div>
+                </div> 
               </div>
             </div>
           </div>
-      </div>
-      </div>
-        </div>
-      </div>
-      </div>
-      <!-- 모달 -->
+          <div class="sw-btn-group">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          </div><!-- tab3-->
+        </div><!-- inner-right-->
+      </div><!-- inner-->
+    </div><!-- item-->
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -254,6 +314,7 @@
       </div>
     </div>
   </div>
+  <?php include_once(_FOOTER_PHP) ?>
   <script>
         function redirectLogout(){
             location.href = "/user/logout";
