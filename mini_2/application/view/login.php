@@ -19,7 +19,6 @@
         <h3 style="color:red;"><?php echo isset($this->errMsg) ? $this->errMsg : "";?></h3>
         <input type="id" id="id" name="id" placeholder="Id" />
         <input type="password" id="pw" name="pw" placeholder="Password" />
-        <a href="pwfind" class="find-pw">Forgot your password?</a>
         <button class="ghost" type="submit">로그인</button>
         <a href="up" class="sign-up-btn ghost">회원가입</a>
       </form>

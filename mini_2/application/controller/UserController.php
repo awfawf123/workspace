@@ -2,6 +2,7 @@
 namespace application\controller;
 
 class UserController extends Controller{
+    // 로그인페이지 이동
     public function loginGet(){
         
         return "login"._EXTENSION_PHP;
@@ -29,14 +30,12 @@ class UserController extends Controller{
         // 로그인 페이지 리턴
         return "login"._EXTENSION_PHP;
     }
-    public function pwfindGet(){
-        return "pwfind"._EXTENSION_PHP;
-    }
-
+   
+    // 회원가입 페이지 이동
     public function upGet(){
         return "sign"._EXTENSION_PHP;
     }
-
+    // 회원가입
     public function upPost(){
         $arrPost = $_POST;
         $pw = $arrPost["pw"];
@@ -92,8 +91,9 @@ class UserController extends Controller{
         $emailResult = $this->model->emailChk($arrPost);
 
         if(count($emailResult) !== 0){
-            $errMsg = "입력하신 EMAIL이 사용중입니다.";
-            $this->addDynamicProPerty("errMsgEmail",$errMsg);
+            $errMsgEmail = "입력하신 EMAIL이 사용중입니다.";
+            $this->addDynamicProPerty("errMsgEmail",$errMsgEmail);
+            return "sign"._EXTENSION_PHP;
         }
         // 유효성체크 에러일경우
         if(!empty($arrChkErr)){
@@ -126,12 +126,12 @@ class UserController extends Controller{
         // 로그인 페이지로 이동
         return _BASE_REDIRECT."/user/login";
     }
-    // 유저 정보 업데이트
+    // 유저 정보 업데이트 페이지 이동
     public function userupdateGet(){
       
         return "userupdate"._EXTENSION_PHP;
     }
-
+    // 유저 정보 업데이트
     public function userupdatePost(){
         $arrPost = $_POST;
         $pw = $arrPost["pw"];
@@ -142,6 +142,7 @@ class UserController extends Controller{
         $numChk = preg_match('/^(010|011|016|017|018|019)[^0][0-9]{3,4}[0-9]{4}/',$num);
         $arrChkErr = [];
         $date = date('Y-m-d');
+        $result = $this->model->getUser($arrPost, false);
         //유효성체크
         if(mb_strlen($arrPost["id"]) === 0 || mb_strlen($arrPost["id"]) > 12){
             $arrChkErr["id"] = "ID는 12글자 이하로 입력해 주세요.";
@@ -150,20 +151,23 @@ class UserController extends Controller{
         if(!ctype_alnum($arrPost["id"])){
             $arrChkErr["id"] = "ID는 영문숫자로만 입력가능합니다.";
         }
-        // PW글자수 체크
-        if(mb_strlen($pw) < 8 || mb_strlen($pw) >20){
-            $arrChkErr["pw"] = "PW는 영문,숫자,특수문자로 8~12글자로 입력해 주세요.";
-        }
-        //PW 영문숫자특수문자 체크
-        if(preg_match("/\s/u",$pw) === true){
-            $arrChkErr["pw"] = "비밀번호는 공백없이 입력해 주세요";
-        }
-        if($num ===0 || $eng ===0 || $spe ===0){
-            $arrChkErr["pw"] = "영문,숫자,특수문자를 혼합하여 입력해주세요";
-        }
-        // 비밀번호 확인
-        if($arrPost["pw"] !== $arrPost["pw1"]){
-            $arrChkErr["pw1"] = "비밀번호가 일치하지 않습니다.";
+        // 비밀번호가 없으면 업데이트 안함
+        if($arrPost["pw"] !== ""){
+            // PW글자수 체크
+            if(mb_strlen($pw) < 8 || mb_strlen($pw) > 20){
+                $arrChkErr["pw"] = "PW는 영문,숫자,특수문자로 8~12글자로 입력해 주세요.";
+            }
+            //PW 영문숫자특수문자 체크
+            if(preg_match("/\s/u",$pw) === true){
+                $arrChkErr["pw"] = "비밀번호는 공백없이 입력해 주세요";
+            }
+            if($num === 0 || $eng === 0 || $spe === 0){
+                $arrChkErr["pw"] = "영문,숫자,특수문자를 혼합하여 입력해주세요";
+            }
+            // 비밀번호 확인
+            if($arrPost["pw"] !== $arrPost["pw1"]){
+                $arrChkErr["pw1"] = "비밀번호가 일치하지 않습니다.";
+            }
         }
         // 이름글자수 체크
         if(mb_strlen($arrPost["u_name"])=== 0 || mb_strlen($arrPost["u_name"]) > 30){
@@ -193,8 +197,7 @@ class UserController extends Controller{
             $this->addDynamicProPerty("arrError",$arrChkErr);
             return "userupdate"._EXTENSION_PHP;
         }
-
-
+       
         // --------트랜잭션 시작-----------
         $this->model->beginTransaction();
 
@@ -206,6 +209,7 @@ class UserController extends Controller{
         }
         $this->model->commit();
         // --------트랜잭션 종료-----------
+        // 로그아웃 후 로그인 페이지로 리턴
         session_unset();
         session_destroy();
 

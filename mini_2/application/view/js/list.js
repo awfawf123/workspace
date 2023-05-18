@@ -110,3 +110,4 @@ tabs.forEach(tab => {
     document.querySelectorAll(`.${tab.getAttribute("rel")}`).forEach(t => t.style.display = "block");
   });
 });
+

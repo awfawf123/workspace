@@ -41,6 +41,7 @@ $result = $this->model->getUser($arr,false);
         <?php if(isset($this->arrError["pw1"])){ ?>
                 <span class="errMsg"><?php echo $this->arrError["pw1"]?></span>
         <?php } ?>
+        
         <input type="text" id="u_name" name="u_name" maxlength="10" placeholder="이름"
         value="<?php echo $result[0]["u_name"] ?>" required>
         <?php if(isset($this->arrError["u_name"])){ ?>

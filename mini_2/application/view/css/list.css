@@ -240,8 +240,7 @@ font-weight: 500;
 }
 .swiper-button-next{
 position: absolute;
-bottom: -100px;
-left: 50%;
+right: -5%;
 }
 
 /* footer */

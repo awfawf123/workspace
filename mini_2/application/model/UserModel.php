@@ -82,19 +82,22 @@ class UserModel extends Model{
         }
     }
     public function updateUser($arrUserInfo){
-        $sql = " UPDATE user_info SET 
-                 u_id = :id
-                ,u_pw = :pw
-                ,u_birth = :birth
-                ,u_gender = :gender
-                ,u_email = :email
-                ,u_num = :num
-                ,u_name = :u_name 
-                WHERE u_no = :u_no ";
-
+        if($arrUserInfo["pw"] !== ""){
+            $pw = " ,u_pw = :pw ";
+        }
+        
+        $sql = " UPDATE user_info SET "
+                ." u_id = :id "
+                .$pw
+                ." ,u_birth = :birth "
+                ." ,u_gender = :gender "
+                ." ,u_email = :email "
+                ." ,u_num = :num "
+                ." ,u_name = :u_name "
+                ." WHERE u_no = :u_no ";
+                
         $prepare = [
             ":id" => $arrUserInfo["id"]
-            ,":pw" => $arrUserInfo["pw"]
             ,":birth" => $arrUserInfo["birth"]
             ,":gender" => $arrUserInfo["gender"]
             ,":email" => $arrUserInfo["email"]
@@ -102,6 +105,9 @@ class UserModel extends Model{
             ,":u_name" => $arrUserInfo["u_name"]
             ,":u_no" => $arrUserInfo["u_no"]
         ];
+        if($arrUserInfo["pw"] !== ""){
+            $prepare[":pw"] = $arrUserInfo["pw"];
+        }
         try {
             $stmt = $this->conn->prepare($sql);
             $result = $stmt->execute($prepare);

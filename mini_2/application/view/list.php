@@ -45,7 +45,11 @@
           <h2>오늘 하루만, 특가 상품</h2>
           <i class="bi bi-clock-history"></i>
           <div class="today"></div>
+          <div class="insert">
+            <a href="../product/insertgoods">상품 등록</a>
+          </div>
         </div>
+        
         <div class="row row-cols-xxl-3 row-cols-lg-3">
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
@@ -69,6 +73,7 @@
                 </div>
               </div>
           </div>
+
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
                 <img src="https://source.unsplash.com/collection/190727/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
