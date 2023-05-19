@@ -19,10 +19,10 @@ CREATE TABLE list_info(
 	,li_cont VARCHAR(512)
 	,li_price INT
 	,li_category VARCHAR(20) NOT NULL
-	,li_imgfile VARCHAR(100)
+	,li_imgfile VARCHAR(100) NOT null
 );
 
-DROP TABLE user_info;
+DROP TABLE list_info;
 
 DELETE FROM user_info WHERE u_id="user";
 
@@ -62,5 +62,6 @@ SELECT * FROM user_info;
 
 FLUSH PRIVILEGES;
 
+select * from list_info order by li_no DESC LIMIT 3;
 
 COMMIT;

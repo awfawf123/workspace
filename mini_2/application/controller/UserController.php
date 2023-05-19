@@ -144,6 +144,7 @@ class UserController extends Controller{
         $date = date('Y-m-d');
         $result = $this->model->getUser($arrPost, false);
         //유효성체크
+        // id
         if(mb_strlen($arrPost["id"]) === 0 || mb_strlen($arrPost["id"]) > 12){
             $arrChkErr["id"] = "ID는 12글자 이하로 입력해 주세요.";
         }
@@ -191,6 +192,7 @@ class UserController extends Controller{
         if(count($emailResult) !== 0){
             $errMsg = "입력하신 EMAIL이 사용중입니다.";
             $this->addDynamicProPerty("errMsgEmail",$errMsg);
+            return "sign"._EXTENSION_PHP;
         }
         // 유효성체크 에러일경우
         if(!empty($arrChkErr)){

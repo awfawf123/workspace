@@ -87,6 +87,11 @@ $result = $this->model->getUser($arr,false);
     </div>
   </div>
 </div>
+<script>
+        function redirectLogout(){
+            location.href = "/user/logout";
+        }
+    </script>
 <script src="/application/view/js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

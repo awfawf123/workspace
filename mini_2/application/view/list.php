@@ -45,25 +45,30 @@
           <h2>오늘 하루만, 특가 상품</h2>
           <i class="bi bi-clock-history"></i>
           <div class="today"></div>
-          <div class="insert">
-            <a href="../product/insertgoods">상품 등록</a>
-          </div>
+          <?php if(isset($_SESSION["u_id"])){?>
+            <?php if($_SESSION["u_id"] === "admin"){?>
+            <div class="insert-btn">
+              <a href="../product/insertgoods" class="btn btn-primary">상품 등록</a>
+            </div>
+          <?php } ?>
+         <?php } ?>
         </div>
-        
         <div class="row row-cols-xxl-3 row-cols-lg-3">
+          <!-- 리스트 출력 -->
+        <?php foreach ($this->result as $key => $value) { ?>
           <div class="col d-flex justify-content-center pt-3 pb-3">
             <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/daily?coffee/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
+                <img src="<?php echo $this->result[$key]["li_imgfile"]?>" style="width: 100%; height:300px" class="card-img-top" alt="...">
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Item #1
+                      <?php echo $this->result[$key]["li_name"]?>
                       </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong>
+                        <strong><?php echo $this->result[$key]["li_cont"]?></strong>
                         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
                           구매하기
                         </button>
@@ -73,51 +78,7 @@
                 </div>
               </div>
           </div>
-
-          <div class="col d-flex justify-content-center pt-3 pb-3">
-            <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/collection/190727/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
-                <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading2">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Item #1
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          구매하기
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="col d-flex justify-content-center pt-3 pb-3">
-            <div class="card" style="width: 30rem; border: none;">
-                <img src="https://source.unsplash.com/WLUHO9A_xik/300x300" style="width: 100%; height:300px" class="card-img-top" alt="...">
-                <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading3">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                        Item #1
-                      </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          구매하기
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+        <?php } ?>
         </div>
       </div>
 <!-- itmes -->
@@ -135,162 +96,74 @@
           <div class="tab-contents tab01">
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="pdp-card">
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                          </a>
+                <?php foreach ($this->result2 as $key => $value) { ?>
+                  <?php if($this->result2[$key]["li_category"] === "신제품"){ ?>
+                    <div class="swiper-slide">
+                      <div class="pdp-card">
+                          <div class="pdp-img">
+                              <a href="#">
+                                  <img src="<?php echo $this->result2[$key]["li_imgfile"]?>" alt="">
+                              </a>
+                          </div>
+                          <div class="pdp-detail">
+                              <a href="#"><?php echo $this->result2[$key]["li_name"]?></a>
+                          </div>
                       </div>
-                      <div class="pdp-detail">
-                          <a href="#">치즈 케이크</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="pdp-card">
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                          </a>
-                      </div>
-                      <div class="pdp-detail">
-                          <a href="#">크로와상</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="pdp-card">
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                          </a>
-                      </div>
-                      <div class="pdp-detail">
-                          <a href="#">초콜렛</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="pdp-card"> 
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                          </a>
-                      </div>
-                      <div class="pdp-detail">
-                          <a href="#">마카롱(초코,딸기,치즈,유자)</a>
-                      </div>
-                  </div>
-                </div>
+                    </div>
+                  <?php }?>
+               <?php }?>
               </div>
             </div>
+            <div class="sw-btn-group">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
           </div>
           <div class="tab-contents tab02">
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="pdp-card">
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/daily?coffee" alt="">
-                          </a>
+              <?php foreach ($this->result2 as $key => $value) { ?>
+                  <?php if($this->result2[$key]["li_category"] === "추천제품"){ ?>
+                    <div class="swiper-slide">
+                      <div class="pdp-card">
+                          <div class="pdp-img">
+                              <a href="#">
+                                  <img src="<?php echo $this->result2[$key]["li_imgfile"]?>" alt="">
+                              </a>
+                          </div>
+                          <div class="pdp-detail">
+                              <a href="#"><?php echo $this->result2[$key]["li_name"]?></a>
+                          </div>
                       </div>
-                      <div class="pdp-detail">
-                          <a href="#">치즈 케이크</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card">
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727" alt="">
-                        </a>
                     </div>
-                    <div class="pdp-detail">
-                        <a href="#">크로와상</a>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card">
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727" alt="">
-                        </a>
-                    </div>
-                    <div class="pdp-detail">
-                        <a href="#">초콜렛</a>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card"> 
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                        </a>
-                    </div>
-                    <div class="pdp-detail">
-                        <a href="#">마카롱(초코,딸기,치즈,유자)</a>
-                    </div>
-                </div> <!-- card-->
-              </div><!-- slide-->
+                  <?php }?>
+               <?php }?>
             </div><!-- wrapper-->
           </div><!-- container-->
+          <div class="sw-btn-group">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
           </div><!-- tab2-->
           <div class="tab-contents tab03">
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="pdp-card">
-                      <div class="pdp-img">
-                          <a href="#">
-                              <img src="https://source.unsplash.com/daily?coffee" alt="">
-                          </a>
+              <?php foreach ($this->result2 as $key => $value) { ?>
+                  <?php if($this->result2[$key]["li_category"] === "베스트셀러"){ ?>
+                    <div class="swiper-slide">
+                      <div class="pdp-card">
+                          <div class="pdp-img">
+                              <a href="#">
+                                  <img src="<?php echo $this->result2[$key]["li_imgfile"]?>" alt="">
+                              </a>
+                          </div>
+                          <div class="pdp-detail">
+                              <a href="#"><?php echo $this->result2[$key]["li_name"]?></a>
+                          </div>
                       </div>
-                      <div class="pdp-detail">
-                          <a href="#">치즈 케이크</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card">
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                        </a>
                     </div>
-                    <div class="pdp-detail">
-                        <a href="#">크로와상</a>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card">
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                        </a>
-                    </div>
-                    <div class="pdp-detail">
-                        <a href="#">초콜렛</a>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="pdp-card"> 
-                    <div class="pdp-img">
-                        <a href="#">
-                            <img src="https://source.unsplash.com/collection/190727/300x300" alt="">
-                        </a>
-                    </div>
-                    <div class="pdp-detail">
-                        <a href="#">마카롱(초코,딸기,치즈,유자)</a>
-                    </div>
-                </div> 
-              </div>
+                  <?php }?>
+               <?php }?>
             </div>
           </div>
           <div class="sw-btn-group">
@@ -320,11 +193,7 @@
     </div>
   </div>
   <?php include_once(_FOOTER_PHP) ?>
-  <script>
-        function redirectLogout(){
-            location.href = "/user/logout";
-        }
-    </script>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/application/view/js/list.js"></script>

@@ -30,8 +30,10 @@ var swiper = new Swiper('.tab01 .swiper-container', {
     // 화면의 넓이가 1024px 이상일 때
     1024: {
       slidesPerView: 3,
-      spaceBetween: 10
-    }
+      spaceBetween: 20
+    },
+      observer: true,
+      observeParents: true,
   },
     pagination: {
       el: '.tab01 .swiper-pagination',
@@ -41,26 +43,25 @@ var swiper = new Swiper('.tab01 .swiper-container', {
       nextEl: '.tab01 .swiper-button-next',
       prevEl: '.tab01 .swiper-button-prev',
     },
-    centeredSlides: true,
-    preventClicks:true,
-    loop:true,  
-    on: {
-      init: function () {
-        document.querySelector('.swiper-slide').classList.add('changed');
-      },
-      slideChangeTransitionStart : function() {
-        document.querySelector('.swiper-slide').classList.add('changing');
-        document.querySelector('.swiper-slide').classList.remove('changed');
-      },
-      slideChangeTransitionEnd : function() {
-        document.querySelector('.swiper-slide').classList.remove('changing');
-        document.querySelector('.swiper-slide').classList.add('changed');
-      }
-    },
   });
 
   var swiper = new Swiper('.tab02 .swiper-container', {
-    slidesPerView:'3',
+    breakpoints: {
+      // 화면의 넓이가 320px 이상일 때
+      320: {
+        slidesPerView: 1
+      },
+      // 화면의 넓이가 640px 이상일 때
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      },
+      // 화면의 넓이가 1024px 이상일 때
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      }
+    },
     pagination: {
       el: '.tab02 .swiper-pagination',
       clickable: true,
@@ -70,7 +71,7 @@ var swiper = new Swiper('.tab01 .swiper-container', {
       prevEl: '.tab02 .swiper-button-prev',
     },
     observer: true,
-      observeParents: true,
+    observeParents: true,
   });
   var swiper = new Swiper('.tab03 .swiper-container', {
     breakpoints: {
@@ -100,6 +101,11 @@ var swiper = new Swiper('.tab01 .swiper-container', {
       observer: true,
       observeParents: true,
     });
+
+// 로그아웃
+function redirectLogout(){
+  location.href = "/user/logout";
+}
 // Weekly Menu탭 클릭시
 const tabs = document.querySelectorAll(".tab-wrapper .tab");
 tabs.forEach(tab => {
