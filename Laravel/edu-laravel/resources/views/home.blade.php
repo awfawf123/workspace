@@ -27,5 +27,10 @@
         @method('DELETE')
         <button type="submit">DELETE</button>
     </form>
+    <!-- <form action="{{route('tests.index');}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">DELETE</button>
+    </form> -->
 </body>
 </html>

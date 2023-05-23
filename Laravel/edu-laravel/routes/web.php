@@ -145,3 +145,19 @@ Route::get('/makesign',function(){
 Route::get('/sign', function(){
     return "Sign!!";
 })->name('sign')->middleware('signed'); //middleware('signed) = 경로 다를 시 바로 404에러 발생시킴
+
+// -----------------
+// 컨트롤러
+// -----------------
+// 커멘드로 컨트롤러 생성 : php artisan make:controller TestController
+use App\Http\Controllers\TestController;
+// /test url로 이동 , 불러올 controller이름, 불러올 method명,-> Route 이름 지정
+Route::get('/test',[TestController::class, 'index'])->name('tests.index');
+
+// 커멘드로 컨트롤러 생성 : php artisan make:controller TasksController --resource
+// name 알아서 설정해줌
+use App\Http\Controllers\TasksController;
+Route::resource('/tasks',TasksController::class);
+
+use App\Http\Controllers\BladeController;
+Route::get('/blade',[BladeController::class,'index'])->name('blade.index');
