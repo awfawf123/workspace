@@ -5,8 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use Database\Seeders\CategorySeeder; //시더 use
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,14 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // 초기 데이터 삽입용 시더 호출
-        // $this->call(CategorySeeder::class);
-
-        // 더미 데이터 삽입용 팩토리 호출 999개까지 생성
-        for($i=0; $i<=5; $i++){
-            \App\Models\Board::factory(10000)->create();
-        }
-
         // \App\Models\User::factory(10)->create();
     }
 }
